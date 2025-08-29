@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Map - Women Safety</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Women Safety in Melbourne</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="suburbs.html">Suburbs</a></li>
+          <li><a class="active" href="map.html">Map</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <a href="javascript: logout()" class="">Log out</a>
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+  <!-- ======= Map Section ======= -->
+  <section id="Map" class="Map">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Map</h2>
+        <p>Google Map Instance</p>
+        
+      </div>
+      <div class="my-3">
+        <div class="error-message" id="error"></div>
+      </div>
+      <div class="legend">
+        <!-- ======= indexs buttoms ======= -->
+        <div class="btn">
+          <button onclick="showCrime()">Severity of Cirme</button>
+          <button onclick="showSafety()">Perceptions of Security</button>
+          <button onclick="showkindness()">Inhabitants Kindness</button>
+          <button onclick="showAll()">Comprehensive Safety</button>
+        </div>
+        
+        <ul class="legend-list">
+          <li class="legend-list-item" >
+            <span class="tag"></span>
+            <span class="tagText"></span>
+          </li>
+          <li class="legend-list-item" >
+            <span class="tag"></span>
+            <span class="tagText"></span>
+          </li>
+          <li class="legend-list-item" >
+            <span class="tag"></span>
+            <span class="tagText"></span>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="map"></div>
+       <!-- ======= locations buttoms ======= -->
+      <div class="locations">
+        <span>
+        <button onclick="locate(0)" class="loc"> Carlton</button>
+        <button onclick="locate(1)" class="loc"> Carlton North</button>
+        <button onclick="locate(2)" class="loc"> Docklands</button>
+        <button onclick="locate(3)" class="loc"> East Melbourne</button>
+        <button onclick="locate(4)" class="loc"> Kensington</button>
+        <button onclick="locate(5)" class="loc"> Flemington</button>
+        <button onclick="locate(6)" class="loc"> Melbourne</button>
+        </span>
+        <span>
+        <button onclick="locate(7)" class="loc"> North Melbourne</button>
+        <button onclick="locate(8)" class="loc"> Parkville</button>
+        <button onclick="locate(9)" class="loc"> Port Melbourne</button>
+        <button onclick="locate(10)" class="loc"> South Wharf</button>
+        <button onclick="locate(11)" class="loc"> Southbank</button>
+        <button onclick="locate(12)" class="loc"> South Yarra</button>
+        <button onclick="locate(13)" class="loc"> West Melbourne</button>
+        </span>
+      </div>
+      
+    </div>
+  </section><!-- End Map Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        Project of 2022 Monash FIT3162 Team 3, <strong><span>Sheng</span></strong>, 
+        <strong><span>Shresth</span></strong>, <strong><span>Li</span></strong>
+      </div>
+      <div class="credits">
+        Template from: &nbsp
+        &copy; Copyright <strong><span>Kelly</span></strong>. All Rights Reserved.
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+  
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB68u1WsfsBe5fAWYduWfmiUlqUifAn85g&v=beta&region=AU&language=en&callback=initMap"
+      defer
+    >
+  </script>
+  <script src="assets/js/onload.js"></script>
+  <script src="assets/js/ajax.js"></script>
+  <script src="assets/js/process.js"></script>
+  <script src="assets/js/map.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
